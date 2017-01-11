@@ -1,0 +1,120 @@
+@media screen (min-width: 992px) and (max-width: 1280px) {	
+	.container {
+		width: 70%;
+		margin-left: 15%;
+		margin-right: 15%;
+	}
+	.banner {
+		width: 40%;
+		top: 100px;
+	    left: 15.64%;
+	    margin-bottom: 37%;
+	}
+	.banner__h1 {
+		font-size: 45px;
+	}
+	.info-list {
+		position: absolute;
+		width: 30%;
+		top: 0%;
+		left: 61%;
+		background-color: #ffffff;
+	}
+}
+@media screen (min-width: 768px) and (max-width: 991px) {
+	.container {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.banner {
+		width: 40%;
+		top: 100px;
+	    left: 15.64%;
+	    margin-bottom: 37%;
+	}
+	.banner__h1 {
+		font-size: 45px;
+	}
+	.info-list {
+		display: none;
+	}
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+	.container {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+	.menu > li {
+		display: none;
+	}
+	.menu > li:last-child {
+		display: block;
+	}
+	.banner {
+		width: 50%;
+		top: 20px;
+	    left: 15.64%;
+	    margin-bottom: 25%;
+	}
+	.banner__h1 {
+		font-size: 35px;
+	}
+	.banner__p {
+		font-size: 10px;
+	}
+	.features__img {
+		width: 30%;
+	}
+	.features__h2 {
+		height: 70px;
+		font-size: 11px;	
+	}
+	.features__p {
+		height: 160px;
+	}
+
+}
+
+@media (max-width: 479px) {
+	body {
+		background-image: url(..//img/forPhone.png);
+	}
+	.container {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+	.menu > li {
+		display: none;
+	}
+	.menu > li:last-child {
+		display: block;
+	}
+	.banner {
+		width: 50%;
+		top: 0px;
+	    left: 15.64%;
+	    margin-bottom: 25%;
+	}
+	.banner__h1 {
+		font-size: 22px;
+	}
+	.banner__p {
+		font-size: 9px;
+	}
+	.features__img {
+		width: 40%;
+	}
+	.features__h2 {
+		height: 80px;
+		font-size: 11px;	
+	}
+	.features__p {
+		height: 180px;
+		font-size: 10px;
+	}
+}
