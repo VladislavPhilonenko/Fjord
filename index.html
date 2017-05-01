@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="description" content="">
     <meta name="author" content="">
 	<title>Fjord</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="css/responsive.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/responsive.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 	<link href="http://allfont.ru/allfont.css?fonts=montserrat-light" rel="stylesheet" type="text/css" />
@@ -35,11 +35,22 @@
 			<li><a href="#">BLOG</a></li>
 			<li><a href="#">WORK</a></li>
 			<li><a href="#">START A PORJECT</a></li>
-			<li><button class="menu__button" type="button">
+			<li class="dropdown"><button class="menu__button" type="button">
 			        <span class="menu__icon-bar"></span>
 			        <span class="menu__icon-bar"></span>
 			        <span class="menu__icon-bar"></span>
 				</button>
+				<div class="dropdown-content" style="right: 0;">
+					<a href="#" class='menu_fade'>HOME</a>
+					<a href="#" class='menu_fade'>PAGES</a>
+					<a href="#" class='menu_fade'>ELEMENTS</a>
+					<a href="#" class='menu_fade'>PRODUCT</a>
+					<a href="#" class='menu_fade'>BLOG</a>
+					<a href="#" class='menu_fade'>WORK</a>
+					<a href="#" class='menu_fade'>START A PORJECT</a>
+					<a href="#">ABOUT</a>
+					<a href="#">MORE</a>
+				</div>
 		    </li>
 		</ul>
 	</header>
@@ -91,10 +102,10 @@
 		    </div>
 
 			<a class="carousel__prev" onclick="plusSlides(-1)">
-				<img src="img/previous.png" alt="previous" style="width:90%">
+				<img src="img/previous.png" alt="previous">
 			</a>
 			<a class="carousel__next" onclick="plusSlides(1)">
-				<img src="img/next.png"" alt="next" style="width:90%">
+				<img src="img/next.png"" alt="next">
 			</a>
         </div>
         <div class="info-list">
@@ -147,22 +158,24 @@
 		</div>
 		<div class="carousel carousel_ipad">
 			<img class="carousel__ipad-img" src="img/ipad.png" alt="ipad">
-	        <div class="carousel__slides fade">
-				<img src="" 
-				alt="your image" style="width: 100%">
-		    </div>
-			<div class="carousel__slides fade">
-				<img src="" 
-				alt="your image" style="width:100%">
-		    </div>
-			
-			<div class="carousel__slides fade">
-				<img src=""
-				alt="your image" style="width:100%">
-		    </div>
-
-			<a class="carousel__left" onclick="plusSlides(-1)">
-				<img src="img/left.png" alt="left" style="width:88%">
+			<div class="carousel__shell">
+				<div class="carousel__strip">
+					<div class="inner__shell">
+						<img src="img/wood.png" 
+						alt="your image" style="width: 100%">
+					</div>
+					<div class="inner__shell">
+						<img src="img/wood_2.png" 
+						alt="your image" style="width: 100%">
+					</div>
+					<div class="inner__shell">
+						<img src="img/wood_3.png"
+						alt="your image" style="width: 100%">
+					</div>
+				</div>
+			</div>
+			<a class="carousel__left">
+				<img src="img/left.png" alt="left">
 			</a>
 	    </div>
 	</div>
@@ -277,6 +290,9 @@
 	</div>
 
 	<footer class="footer">
+		<div class=" footer__title container">
+			<h2 class="footer__h2">THIS WILL CHANGE EVERYTHING</h2>
+		</div>
 		<div class="footer__inner container">
 			<div class="footer__logo">
 				<a href="#"><img src="img/logo_white.png" alt="logo"></a>

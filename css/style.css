@@ -23,21 +23,21 @@ ul, ol {
 }
 /*HEADER*/
 .header {
+	display: -webkit-flex;
+	-webkit-align-items: center;
+	-webkit-justify-content: space-between;	
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	display: -webkit-flex;
-	-webkit-align-items: center;
-	-webkit-justify-content: space-between;
 	padding-top: 29px;
 }
 .menu {
-	display: inline-flex;
-	align-items: center;
-	justify-content: flex-end;
 	display: -webkit-inline-flex;
 	-webkit-align-items: center;
 	-webkit-justify-content: flex-end;
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-end;
 	margin-top: 7px;
 	margin-bottom: 7px;
 }
@@ -46,12 +46,25 @@ ul, ol {
 	font-size: 11px;
 }
 .menu > li > a {
+	display: inline-block;
 	padding: 15px;
 	text-decoration: none;
 	color: #8b8d8e;
 }
+.menu > li:last-child a {
+	display: block;
+	padding: 15px;
+	text-decoration: none;
+}
+.menu > li:last-child a:hover {
+	background-color: #26e6e6;
+}
+.menu > li:last-child a.menu_fade {
+	display: none;
+}
 .menu .fa{
 	margin-left: 5px;
+	font-size: 12px;
 }
 .menu__button {
 	padding: 15px 19px;
@@ -78,6 +91,24 @@ ul, ol {
 .menu > li:hover .menu__icon-bar{
 	background-color: white;
 }
+.dropdown {
+	position: relative;
+	padding-bottom: 20px;
+	top: 10px;
+}
+.dropdown-content {
+	text-align: left;
+	min-width: 193px;
+	padding: 5px;
+    display: none;
+    position: absolute;
+    top: 48px;
+    background-color: black;
+    z-index: 999;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 /*HOME-BOARD*/
 .banner {
 	width: 40%;
@@ -103,12 +134,12 @@ ul, ol {
 }
 /*features*/
 .features {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-around;
 	display: -webkit-flex;
 	-webkit-align-items: baseline;
 	-webkit-justify-content: space-around;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-around;
 }
 .features__col {
 	width: 28%;
@@ -140,6 +171,7 @@ ul, ol {
 }
 .features__p {
 	height: 90px;
+	margin-bottom: 20px;
 	font-family: 'Montserrat Light', arial;
 	font-size: 12px;
 	line-height: 1.5;
@@ -150,6 +182,9 @@ ul, ol {
 	font-size: 11px;
 	text-decoration: none;
 	color: black;
+}
+.features__a:hover {
+	text-decoration: underline;
 }
 /*iphone-block*/
 .iphone-block {
@@ -167,22 +202,39 @@ ul, ol {
 .carousel__slides {
 	position: absolute;
 	z-index: 999;
+	top: 6%;
+	left: 11.2%;
+	bottom: 12.5%;
+	overflow: hidden;
+	border-radius: 2px;
+	/*box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);*/
+}
+/*for ifone*/
+/*.carousel__slides {
+	position: absolute;
+	z-index: 999;
 	width: 30%;
 	top: 6%;
 	left:28%;
 	transform: rotateZ( -50.5deg) rotateX( 20deg) rotateY( 34deg);
-}
+}*/
 .carousel__prev {
 	position: absolute;
 	top: 65%;
 	left:21.4%;
 	cursor: pointer;
 }
+.carousel__prev img {
+	width: 90%;
+}
 .carousel__next {
 	position: absolute;
 	top: 25%;
 	left:49.3%;
 	cursor: pointer;
+}
+.carousel__next img {
+	width: 90%;
 }
 .info-list {
 	position: absolute;
@@ -212,8 +264,7 @@ ul, ol {
 }
 .inside-info__p {
 	width: 90%;
-	margin-top: 15px;
-	margin-bottom: 30px;
+	padding-top: 15px;
 	padding-left: 70px;
 	font-family: 'Montserrat Light', arial;
 	line-height: 1.5;
@@ -249,6 +300,7 @@ ul, ol {
 	font-size: 16px;
 }
 .builder .features {
+	-webkit-justify-content: space-between;
 	justify-content: space-between;
 }
 .builder .features__col {
@@ -275,6 +327,7 @@ ul, ol {
 	margin-left: 7%;
 	margin-right: 7%;
 	padding-top: 98px;
+	padding-bottom: 9%;
 	color: white;
 	background-color: black;
 }
@@ -288,14 +341,13 @@ ul, ol {
 .ipad-block__p {
 	width: 31%;
 	margin-top: 36px;
+	margin-bottom: 145px;
 	margin-left: 9.5%;
 	font-family: 'Montserrat Light', arial;
 	font-size: 12px;	
 	line-height: 1.5;
 }
 .ipad-block__button {
-	margin-top: 145px;
-	margin-bottom: 115px;
 	margin-left: 9.5%;
 	padding: 14px 43px;
 	border-radius: 40px;
@@ -318,6 +370,33 @@ ul, ol {
 	top: 43%;
 	left: -16.5%;
 	cursor: pointer;
+}
+.carousel__left img {
+	width: 88%;
+}
+.carousel__shell {
+	position: absolute;
+	top: 6.1%;
+	left: 11.2%;
+	bottom: 12.7%;
+	right: 0%;
+	overflow: hidden;
+}
+.carousel__strip {
+	position: relative;
+	left: 0%;
+	width: 300%;
+	transition: all ease 1s;
+}
+.inner__shell {
+	width: 33.32%;
+	float: left;
+
+}
+.carousel__strip img {
+	height: auto;
+	width: 100%;
+
 }
 /*PLATFORM-FEATURES*/
 .platform-features {
@@ -395,7 +474,12 @@ ul, ol {
 	margin-top: 110px;
 }
 .gallery {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
 	position: relative;
+	width: 70%;
+	margin: auto;
 	margin-top: 30px;
 }
 .photos__h2 {
@@ -404,34 +488,37 @@ ul, ol {
 	text-align: center;
 }
 .gallery__photo {
+	display: -webkit-inline-flex;
 	display: inline-flex;
 	position: relative;
 	cursor: pointer;
 }
 .gallery_photo1 {
-	width: 20%;
-	top: -46px;
-	left: 230px;
+	width: 28%;
+	margin-right: 0px;
+	/*top: -46px;
+	left: 230px;*/
 }
 .gallery_photo2 {
-	width: 40%;
-	top: -20px;
-	left: 325px;
-}
-.gallery_photo3 {	
 	width: 60%;
-	top: -180px;
-	left: 278px;
+	margin-top: 60px;
+	margin-left: 100px;
+}
+.gallery_photo3 {
+	width: 85%;
+	margin: auto;
+	margin-top: 40px;
 }
 .gallery_photo4 {
-	width: 29%;
-	top: 230px;
-	left: -590px;
+	width: 43%;
+	margin: auto;
+	margin-top: 40px;
 }
 .gallery_photo5 {
-	width: 29%;
-	top: -120px;
-	left: 810px;
+	width: 43%;
+	margin: auto;
+	margin-top: 70px;
+	margin-right: 30px;
 }
 .gallery__button {
 	display: none;
@@ -459,10 +546,16 @@ ul, ol {
 }
 .prices__h2 {
 	margin-bottom: 139px;
+	margin-left: 20px;
+	margin-right: 20px;
 	font-family: 'Montserrat Hairline', arial;
 	font-size: 61px;
 }
 .prices__content {
+	display: -webkit-flex;
+	-webkit-justify-content: space-around;
+	-webkit-flex-wrap: nowrap;
+	-webkit-align-items: baseline;
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: nowrap;
@@ -508,30 +601,37 @@ ul, ol {
 }
 /*Footer*/
 .footer {
-	background-image: url(..//img/footer.png);
+	background-image: url(..//img/footer_bg.png);
 	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
 	margin-top: 120px;
 	padding-top: 400px;
 	padding-bottom: 150px;
 }
+.footer__title {
+	position: absolute;
+	top: 0%;
+	text-align: right;
+}
 .footer__inner {
-	overflow: hidden;
+	-webkit-flex-wrap: nowrap;
+	display: -webkit-flex;
 	display: flex;
 	flex-wrap: nowrap;
-	padding-bottom: 40px;
-	padding-top: 33px;
+	justify-content: space-around;
+	padding: 35px;
 	background-color: black;
 }
 .footer__logo {
-	margin: 42px;
 	margin-top: 10px;
 }
 .footer__about {
-	margin-right: 79px;
 	margin-bottom: 5px;
 }
 .footer__socials {
 	margin-left: 70px;
+	margin-right: 20px;
 	color: white;
 }
 .footer__inner li {
@@ -542,6 +642,10 @@ ul, ol {
 	color: white;
 	opacity: 0.8;
 	cursor: pointer;
+}
+.footer__h2 {
+	font-family: 'Montserrat Black', arial;
+	font-size: 72px;
 }
 .footer__h3 {
 	text-align: right;
@@ -558,7 +662,7 @@ ul, ol {
 }
 .footer__craftwork {
 	margin-bottom: 60px;
-	margin-top: 10px;
+	margin-top: 10px; 	
 	float: right;
 	cursor: pointer;
 }
